@@ -1,0 +1,27 @@
+/* static/style.css */
+body {
+  font-family: Arial;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+}

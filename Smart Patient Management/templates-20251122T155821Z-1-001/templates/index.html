@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function simulateScan() {
+            const simulatedAadhaar = "1234-5678-9012";
+            document.getElementById("aadhaar").value = simulatedAadhaar;
+            alert("Aadhaar Scanned: " + simulatedAadhaar);
+        }
+    </script>
+</head>
+<body>
+    <h1>Patient Registration</h1>
+    <form action="/register" method="POST">
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Aadhaar Number:</label><br>
+        <input type="text" name="aadhaar" id="aadhaar" required><br>
+        <button type="button" onclick="simulateScan()">Scan Aadhaar</button><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+
+        <label>Gender:</label><br>
+        <select name="gender" required>
+            <option value="" disabled selected>Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label>Status:</label><br>
+        <select name="status" required>
+            <option value="" disabled selected>Select</option>
+            <option value="inpatient">Inpatient</option>
+            <option value="outpatient">Outpatient</option>
+        </select><br><br>
+
+        <label>Ward:</label><br>
+        <select name="ward" required>
+            <option value="" disabled selected>Select Ward</option>
+            <option value="Ward A">Ward A</option>
+            <option value="Ward B">Ward B</option>
+            <option value="ICU">ICU</option>
+            <option value="General">General</option>
+        </select><br><br>
+
+        <input type="submit" value="Register Patient">
+    </form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f9fd;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+
+        .card p {
+            font-size: 28px;
+            margin: 0;
+            color: #34495e;
+        }
+
+        .ward-section {
+            margin-top: 50px;
+        }
+
+        .ward {
+            background-color: #d0eaff;
+            padding: 10px 20px;
+            margin: 5px auto;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hospital Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">
+            <h2>Total Patients</h2>
+            <p>{{ total }}</p>
+        </div>
+        <div class="card">
+            <h2>Inpatients</h2>
+            <p>{{ inpatients }}</p>
+        </div>
+        <div class="card">
+            <h2>Outpatients</h2>
+            <p>{{ outpatients }}</p>
+        </div>
+    </div>
+
+    <div class="ward-section">
+        <h2>Ward-wise Patient Count</h2>
+        {% for ward, count in wards.items() %}
+            <div class="ward">{{ ward }}: {{ count }} patient(s)</div><br>
+        {% endfor %}
+    </div>
+</body>
+</html>
